@@ -138,7 +138,21 @@ header .container .colum nav li:hover span i
 .list ul
 {
     width: 100%;
+    padding: 5px 0;
 }
+.list ul::-webkit-scrollbar
+{
+    width: 50px;
+    background-color: var(--bac-search);
+    height: 5px;
+    border-radius: 10px;
+}
+.list ul::-webkit-scrollbar-thumb
+{
+    background: #878f9b; 
+    border-radius: 10px;
+}
+ 
 .list ul li
 {
     display: inline-block;
@@ -192,6 +206,49 @@ header .container .colum nav li:hover span i
 main{
     height: 500px;
 }
+main .container 
+{
+    width: 87%;
+    height: 70vh;
+    /* background-size: cover; */
+}
+main .container .anim-images
+{
+    background-image: url("../images/2.jpg");
+    width: auto;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: sider-bar 18s ease-out 3s infinite alternate forwards;
+ }
+@keyframes sider-bar 
+{
+    0%
+    {
+        background-image: url("../images/2.jpg");
+    }
+    20%
+    {
+        background-image: url("../images/6.jpg");
+    }
+    40%
+    {
+        background-image: url("../images/3.jpg");
+    }
+    60%
+    {
+        background-image: url("../images/4.jpg");
+    }
+    80%
+    {
+        background-image: url("../images/5.jpg");
+    }
+    100%
+    {
+        background-image: url("../images/7.jpg");
+    }
+}
+
 /* end main  */
 
 
@@ -286,8 +343,8 @@ footer .container .one > div ul li a
  footer .container .icons  i
  {
     margin: 0 5px;
-    font-size: 10px;
-    background-color: red;
+    font-size: 15px;
+    background-color:#484848;
     color: var(--nav-color);
     padding: 10px;
     border-radius: 50%;
