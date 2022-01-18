@@ -1,0 +1,89 @@
+
+@media (max-width:1030px)
+{
+    .container .colum nav li a span i
+    {
+        display: none;
+    }
+    .search-link
+    {
+        display: none;
+    }
+    .list ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+    .list ul li a {
+        width: 200px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-around;
+        align-content: center;
+        flex-direction: row;
+    }
+    footer .container .one {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+    footer .payments {
+        flex-direction: column;
+        text-align: right;
+    }
+}
+@media (max-width:930px)
+{
+    .head-top
+    {
+        display: none;
+    }
+}
+@media (max-width:630px)
+{
+    .logo img {
+        width: 188px;
+        height: 58px;
+    }
+    .tow .colum .txt {
+        width: 200px;
+    }
+    footer .container .icons {
+        margin: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+}
+@media (max-width:400px)
+{
+    .container {
+        margin: 0 25px;
+     }
+    .search,.basket i 
+    {
+        padding: 15px;
+    }
+    .logo img {
+        width: 100px;
+        height: 58px;
+    }
+}
+@media (max-width:280px)
+{
+    .logo img {
+    width: 122px;
+    height: 58px;
+}
+    footer form {
+        width: 260px
+    }
+}
