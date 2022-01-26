@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container
+        {
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <img src="images/b-1.jpg" alt="" srcset="">
+            <div class="txt"></div>
+        </div>
+        <div class="slider">
+            <img src="images/b-1.jpg" alt="" srcset="">
+            <div class="txt"></div>
+        </div>
+        <div class="slider">
+            <img src="images/b-1.jpg" alt="" srcset="">
+            <div class="txt"></div>
+        </div>
+    </div>
+    <script>
+        var slideindex =0;
+        showslides();
+        function showslides(){
+            var i;
+            var  slides = document.getElementsByClassName("slider");
+            for(i =0 ;i <slides.length;i++)
+            {
+                slides[i].style.display ="none";
+                slideindex++;
+                if(slideindex> slides.length)
+                {
+                    slideindex=1;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

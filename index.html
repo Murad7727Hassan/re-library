@@ -25,9 +25,9 @@
                 <div class="row">
                     <nav>
                         <ul>
-                            <li><a href=""class="bold">
-                                <span><i class="fas fa-user"></i></span>
-                                <span>ادخل لحسابك أو سجل الان</span>
+                            <li id="open-pop-wind"><a href=""class="bold">
+                                <span class="js-color"><i class="fas fa-user"></i></span>
+                                <span class="js-color">ادخل لحسابك أو سجل الان</span>
                                 </a>
                              </li>
                              <li><a href="">
@@ -107,7 +107,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="basket">
+                    <div class="basket" id="shoping-cart">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                 </div>
@@ -135,9 +135,68 @@
 
     <!-- start maiin  -->
     <main>
-        <div class="container">
-            <div class="anim-images">
+        <div class="container" id="con-refrech">
+            <div id="loginAndAnima">
+                <div class="anim-images" id="js-hiddin">
                 
+                </div>
+                <div class="login" id="login">
+                    <h1>تسجيل الخول أو انشاء حساب جديد</h1>
+                    <span id="close-wind">X</span>
+                    <div class="timer">
+                     <span>الوقت المتبقي لتسجيل</span>
+                    <span id="days"></span> 
+                     <span> يوم</span>   <span id="hours"></span>
+                     <span>ساعة</span>   <span id="minutes"></span>
+                     <span>دقيقة</span>   <span id="seconds"></span>
+                     <span>ثانية</span>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="bo-right" id="show-right" onclick="showright()">تسجيل الدخول</h1>
+                            <form action="" class="fo-right" id="wind-right">
+                                <div>
+                                    <h1>البريد الالكتروني  او رقم الجوال</h1>
+                                   <input type="text">
+                                </div>
+                                <div>
+                                   <h1>كلمة السر</h1>
+                                   <div class="lock">
+                                    <input type="text">
+                                    <a href="http://">نسيت؟</a>
+                                   </div>
+                                </div>
+                                <div class="btn-form">
+                                    <input type="button" value="تسجيل الدخول" class="btn-send">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <h1 class="bo-left" id="show-left" onclick="showleft()">أنشاء حساب</h1>
+                            <form action="" class="fo-left" id="wind-left">
+                                <div>
+                                    <h1>البريد الالكتروني  او رقم الجوال</h1>
+                                   <input type="text">
+                                </div>
+                                <div>
+                                   <h1>كلمة السر</h1>
+                                   <div class="lock">
+                                    <input type="text">
+                                    <a href="http://">نسيت؟</a>
+                                   </div>
+                                </div>
+                                <div class="btn-form">
+                                   <input type="button" value="تسجيل الدخول" class="btn-send">
+                                </div>
+                            </form>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chickout">
+
             </div>
         </div>
     </main>
