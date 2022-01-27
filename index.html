@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة جرير</title>
+    <title>login</title>
     <!-- normalize flie  -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- font icon file  -->
@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
      <!-- main css files  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- change language  -->
+    <link rel="stylesheet" href="css/arblan.css">
     <!-- media  -->
     <link rel="stylesheet" href="css/media.css">
 </head>
@@ -72,10 +74,9 @@
                                 <span>المملكة العربية السعودية/ ر.س</span>
                                 </a>
                              </li>
-                             <li><a href="">
+                             <li id="lang">
                                 <span>English</span>
-                                <span><i class="fas fa-language"></i></span>                           
-                                </a>
+                                <span><i class="fas fa-language"></i></span>        
                              </li>
                         </ul>
                     </nav>
@@ -84,7 +85,6 @@
         </div>
         <div class="container">
             <div class="colum">
-               
                 <div class="row h-r-2">
                     <div class="humprgar">
                         <i class="fas fa-user"></i>
@@ -93,7 +93,7 @@
                         <img src="images/logo.svg" alt="logo" srcset="">
                     </div>
                     <div class="search">
-                        <input type="text" placeholder="البحث">
+                        <input type="text" placeholder="البحث" id="input-search">
                         <i class="fas fa-search"></i>
                         <div class="search-link">
                             <ul>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="basket" id="shoping-cart">
                         <a href="ckickout.html"> <i class="fas fa-shopping-cart"></i></a>
-                       
+                        <span id="counter">0</span>
                     </div>
                 </div>
                 <div class="row list">
@@ -129,6 +129,14 @@
                         <li><a href="">المنتجات المجددة</a></li>
                     </ul>
                 </div>
+                <div class="timer ">
+                    <span>عروضنا مستمرة لمدة</span>
+                    <span id="days"></span> 
+                    <span> يوم</span>   <span id="hours"></span>
+                    <span>ساعة</span>   <span id="minutes"></span>
+                    <span>دقيقة</span>   <span id="seconds"></span>
+                    <span>ثانية</span>
+                </div>
             </div>
         </div>
     </header>
@@ -137,67 +145,1128 @@
     <!-- start maiin  -->
     <main>
         <div class="container" id="con-refrech">
-            <div id="loginAndAnima">
-                <div class="anim-images" id="js-hiddin">
+            <!-- strat image animation using css -->
+          
+            <div class="anim-images" id="js-hiddin">
                 
-                </div>
-                <div class="login" id="login">
-                    <h1>تسجيل الخول أو انشاء حساب جديد</h1>
-                    <span id="close-wind">X</span>
-                    <div class="timer">
-                     <span>الوقت المتبقي لتسجيل</span>
-                    <span id="days"></span> 
-                     <span> يوم</span>   <span id="hours"></span>
-                     <span>ساعة</span>   <span id="minutes"></span>
-                     <span>دقيقة</span>   <span id="seconds"></span>
-                     <span>ثانية</span>
+            </div>
+            <!-- strat login window  -->
+            <div class="login" id="login">
+                <h1>تسجيل الدخول أو انشاء حساب جديد</h1>
+                <span id="close-wind">X</span>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="bo-right" id="show-right" onclick="showright()">تسجيل الدخول</h1>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <h1 class="bo-right" id="show-right" onclick="showright()">تسجيل الدخول</h1>
-                            <form action="" class="fo-right" id="wind-right">
-                                <div>
-                                    <h1>البريد الالكتروني  او رقم الجوال</h1>
-                                   <input type="text">
-                                </div>
-                                <div>
-                                   <h1>كلمة السر</h1>
-                                   <div class="lock">
+                    <div class="col">
+                        <h1 class="bo-left" id="show-left" onclick="showleft()">أنشاء حساب</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="dis-none-right">
+                         <form action="" class="fo-right" id="wind-right">
+                            <div>
+                                <h1>البريد الالكتروني  او رقم الجوال</h1>
+                               <input type="text">
+                            </div>
+                            <div>
+                               <h1>كلمة السر</h1>
+                               <div class="lock">
+                                <input type="text">
+                                <a href="http://">نسيت؟</a>
+                               </div>
+                            </div>
+                            <div class="btn-form">
+                                <input type="button" value="تسجيل الدخول" class="btn-send">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col" id="dis-none-left">
+                         <form action="" class="fo-left" id="wind-left">
+                            <div>
+                                <div class="num">
+                                    <h1>       رقم الجوال</h1>
                                     <input type="text">
-                                    <a href="http://">نسيت؟</a>
-                                   </div>
                                 </div>
-                                <div class="btn-form">
-                                    <input type="button" value="تسجيل الدخول" class="btn-send">
+                                <div class="num">
+                                    <span>رمز البلد</span>
+                                    <br>
+                                   <br>
+                                    <div>
+                                        <span>
+                                            <i></i>
+                                        </span>
+                                        <span>+970</span>
+                                        <span>
+                                            <img src="images/Flag_of_Saudi_Arabia.svg.png" alt="" srcset="">
+                                        </span>
+                                    </div> 
                                 </div>
-                            </form>
-                        </div>
-                        <div class="col">
-                            <h1 class="bo-left" id="show-left" onclick="showleft()">أنشاء حساب</h1>
-                            <form action="" class="fo-left" id="wind-left">
+                            </div>
+                            <p>سوف ترسل لك <span>رمز التحقق عن طريق رسالة نصية</span></p>
+                            <div class="massage-input">
+                                <h1>ارسال رمز التحقق</h1>
+                                <input type="text">
+                            </div>
+                            <div>
+                                <h1>الاسم الاول </h1>
+                               <input type="text">
+                            </div>
+                            <div>
+                                <h1> اسم العائلة</h1>
+                               <input type="text">
+                            </div>
+                            <div>
+                                <h1>البريد الالكتروني       </h1>
+                               <input type="text">
+                            </div>
+                            <div>
+                                <h1>  تأكيد البريد الالكتروني </h1>
+                               <input type="text">
+                            </div>
+                            <div>
+                                <h1>   كلمة السر </h1>
+                               <input type="text">
+                            </div>
+                             <div class="checked">
+                                 <div>
+                                    <i class="fas fa-check"></i>
+                                 </div>
+                                 <label for="">اوافق على <a href="">
+                                     الشروط والاحكام
+                                 </a></label>
+                             </div>
+                             <div class="checked">
                                 <div>
-                                    <h1>البريد الالكتروني  او رقم الجوال</h1>
-                                   <input type="text">
+                                    <i class="fas fa-check"></i>
                                 </div>
-                                <div>
-                                   <h1>كلمة السر</h1>
-                                   <div class="lock">
-                                    <input type="text">
-                                    <a href="http://">نسيت؟</a>
-                                   </div>
-                                </div>
-                                <div class="btn-form">
-                                   <input type="button" value="تسجيل الدخول" class="btn-send">
-                                </div>
-                            </form>
-                             
-                        </div>
+                                <label for=""> التسجيل للانضمام للنشرة البريدية</label>
+                            </div>
+                            <div class="btn-form">
+                               <input type="button" value="تسجيل الدخول" class="btn-send btn-new">
+                            </div>
+                        </form>
+                         
                     </div>
                 </div>
             </div>
-            
-            <div class="chickout">
+        </div>
+        <div class="container container-content ">
+             <!-- start content  -->
+             <div class="content">
+                <div class="row">
+                    <h1>
+                   1     تصفح حسب القسم
+                    </h1>
+                </div>
+                <div class="slide">
+                    <div class="move">
+                        <i class="fas fa-chevron-right move-right " id="move-right"></i>
+                        <i class="fas fa-chevron-left move-left"  id="move-left"></i>
+                    </div>
+                    <div class="slider">
+                   
+                        <div class="con-img">
+                            <div class="row icons-image secion1">
+                                <a href="" class="prod">
+                                    <img src="images/e1.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/3-SchoolSuppliesARWeb.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e2.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e3.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e4.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e5.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e6.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e1.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/3-SchoolSuppliesARWeb.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e2.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e3.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e4.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e5.webp" alt="" srcset="">
+                                </a>
+                               <a href="" class="prod">
+                                    <img src="images/e6.webp" alt="" srcset="">
+                                </a>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+               
+                <div class="row  ads">
 
+                </div>
+                 
+               
+                <div class="row">
+                    <h1>
+                        تصفح حسب القسم
+                    </h1>
+                </div>
+                <div class="slide">
+                    <div class="move">
+                        <i class="fas fa-chevron-right move-right " id="move-right"></i>
+                        <i class="fas fa-chevron-left move-left"  id="move-left"></i>
+                    </div>
+                    <div class="slider">
+                  
+                        <div class="con-img">
+                            <div class="row icons-image lo-flex">
+                                <div class="prodc">
+                                    <img src="images/books/book1.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب ثقافية</span>
+                                        </h1>
+                                        <div class="likes">
+                                            
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب رياضية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book2.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب علمية</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب ديننية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book3.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-lock">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب مرح</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب رويات)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book4.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب قصص وعبر</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب  علمية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book5.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book6.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book7.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book8.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <h1>
+                        تصفح حسب القسم
+                    </h1>
+                </div>
+                <div class="slide">
+                    <div class="move">
+                        <i class="fas fa-chevron-right move-right " id="move-right"></i>
+                        <i class="fas fa-chevron-left move-left"  id="move-left"></i>
+                    </div>
+                    <div class="slider">
+                  
+                        <div class="con-img">
+                            <div class="row icons-image lo-flex">
+                                <div class="prodc">
+                                    <img src="images/books/book9.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب ثقافية</span>
+                                        </h1>
+                                        <div class="likes">
+                                            
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب رياضية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book10.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب علمية</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب ديننية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book11.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب مرح</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب رويات)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book12.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب قصص وعبر</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب  علمية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book1.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book2.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book3.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book4.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h1>
+                        تصفح حسب القسم
+                    </h1>
+                </div>
+                <div class="slide">
+                    <div class="move">
+                        <i class="fas fa-chevron-right move-right " id="move-right"></i>
+                        <i class="fas fa-chevron-left move-left"  id="move-left"></i>
+                    </div>
+                    <div class="slider">
+                  
+                        <div class="con-img">
+                            <div class="row icons-image lo-flex">
+                                <div class="prodc">
+                                    <img src="images/books/book5.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب ثقافية</span>
+                                        </h1>
+                                        <div class="likes">
+                                            
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب رياضية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book6.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب علمية</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب ديننية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book7.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب مرح</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب رويات)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book8.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب قصص وعبر</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب  علمية)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book9.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book10.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book11.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                                <div class="prodc">
+                                    <img src="images/books/book12.jpg" alt="" srcset="">
+                                    <div class="txt">
+                                        <h1>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                            <span class="name-book">كتاب الكتروني</span>
+                                        </h1>
+                                        <div class="likes">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <p class="detiles-pro">كلي ونامي وابهري الاخرين
+                                            <span>(كتاب الكتروني)</span>
+                                        </p>
+                                        <h1 class="price">24.99
+                                            <span class="type-price">ر.س</span>
+                                            <br>
+                                            <span>
+                                                شامل الضريبة
+                                            </span>
+                                        </h1>
+                                        <p class="note"> 
+                                            صيغ اخرى :
+                                            <span>كتاب مطبوع</span>
+                                        </p>
+                                        <div class="icons">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-shopping-cart btn-cart"></i>
+                                            <i class="fas fa-locexk">&LeftArrowRightArrow;</i>
+                                        </div>
+                                    </div>
+                    
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -213,7 +1282,7 @@
                     <form action="#">
                         <div class="input-txt">
                             <input type="email" placeholder="ادخل بريدك الالكتروني">
-                            <i class="fas fa-lock"></i>
+                            <i class="fas fa-lock  "></i>
                         </div>
                         <button>
                             اشتراك
@@ -315,5 +1384,7 @@
     </footer>
     <!-- end footer  -->
     <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/slider.js"></script>
 </body>
 </html>

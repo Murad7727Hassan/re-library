@@ -118,6 +118,10 @@ header .container .colum nav li:hover span i
         font-weight: 900;
         font-size: 1.5rem;
     }
+    .basket
+    {
+        position: relative;
+    }
     .basket i{
         padding: 15px;
         border-radius: 50%;
@@ -129,7 +133,24 @@ header .container .colum nav li:hover span i
     {
         cursor: pointer;
     }
-    
+    .basket #counter
+    {
+        position: absolute;
+        top: -5px;
+        left: -9px;
+        border: 2px solid white;
+        width: 25px;
+        font-weight: bold;
+        display: flex;
+        height: 25px;
+        text-align: center;
+        background-color:#ff9800;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
 .search-link
 {
     position: absolute;
@@ -593,22 +614,35 @@ main .conAuto
  {
      margin-top: 50px;
  }
+ .content h1
+ {
+     margin-top: 45px;
+ }
+ main .container-content  .slide
+ {
+     position: relative;
+     transition: 5s ease-in-out;
+ }
  main .container-content  .slider {
     position: relative;
-    overflow: hidden;
+    overflow-x: scroll;
     display: flex;
-    justify-content: space-around;
-
+    width: 90%;
+    margin: auto;
+    transition: 5s ease-in-out;
+    scroll-behavior: smooth;
+ }
+ main .container-content  .slider::-webkit-scrollbar
+ {
+     height:0 ;
  }
 main .container-content .icons-image
 {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 0 35px;
-    width: 93%;
-    padding-top: 50px;
-    overflow: hidden;
+     display: flex;
+     align-items: center;
+     padding: 0 35px;
+     padding-top: 50px;
+     justify-content: center;
 }
 main .container-content .icons-image::-webkit-scrollbar
 {
@@ -784,7 +818,7 @@ main .container-content .cat-img .icons-image
     gap: 50px;
     overflow: visible;
 }
-.cat-img .icons-image .prodc
+ .icons-image .prodc
 {
     width: 180px;
      padding: 0px 10px;
@@ -794,64 +828,69 @@ main .container-content .cat-img .icons-image
     align-items: center;
     border: 0.5px solid rgb(141, 116, 116);
 }
-.cat-img .icons-image .prodc img
+.lo-flex .prodc
+{
+    width: 240px;
+    margin: 0 10px;
+}
+ .icons-image .prodc img
 {
     width: 88%;
     height: 150px
 }
-.cat-img .icons-image .prodc .txt
+.icons-image .prodc .txt
 {
     text-align: center;
 }
-.cat-img .icons-image .prodc .txt h1 
+ .icons-image .prodc .txt h1 
 {
     margin: 0.4rem 0;
 }
-.cat-img .icons-image .prodc .txt h1 i,
-.cat-img .icons-image .prodc .txt h1 span
+ .icons-image .prodc .txt h1 i,
+ .icons-image .prodc .txt h1 span
 {
     font-size: 1rem;
 }
-.cat-img .icons-image .prodc .txt .likes > i
+ .icons-image .prodc .txt .likes > i
 {
     color:#ffc107 ;
 }
-.cat-img .icons-image .prodc .txt p
+ .icons-image .prodc .txt p
 {
     color: var(--font-color);
 }
-.cat-img .icons-image .prodc .txt .detiles-pro,
-.cat-img .icons-image .prodc .txt .detiles-pro > span
+ .icons-image .prodc .txt .detiles-pro,
+ .icons-image .prodc .txt .detiles-pro > span
 {
     margin: 0.5rem;
     font-size: 1rem;
 }
-.cat-img .icons-image .prodc .txt .price
+ .icons-image .prodc .txt .price
 {
     font-size: 2rem;
     color: var(--btn-color);
 }
-.cat-img .icons-image .prodc .txt .price span
+ .icons-image .prodc .txt .price span
 {
      color: var(--btn-color);
 }
-.cat-img .icons-image .prodc .txt .price >span:last-child
+ .icons-image .prodc .txt .price >span:last-child
 {
     font-size: .8rem;
     color: var(--font-color);
 }
-.cat-img .icons-image .prodc .txt .note,
-.cat-img .icons-image .prodc .txt .note span
+ .icons-image .prodc .txt .note,
+  .icons-image .prodc .txt .note span
 {
     color: var(--secondd-color);
     font-size: 1rem;
 }
-.cat-img .icons-image .prodc .txt .note  span
+ .icons-image .prodc .txt .note  span
 {
     color: blue;
     font-weight: bold;
 }
-.cat-img .icons-image .prodc .txt .icons
+ .icons-image .prodc .txt .icons
 {
     display: flex;
     justify-content: space-between;
@@ -859,11 +898,15 @@ main .container-content .cat-img .icons-image
     margin: 10px 0;
     padding: 0 10px;
 }
-.cat-img .icons-image .prodc .txt .icons i
+.icons-image .prodc .txt .icons i
 {
     font-size: 1.2rem;
 }
-.cat-img .icons-image .prodc .txt .icons .fa-shopping-cart
+ .icons-image .prodc .txt .icons i:hover
+{
+    cursor: pointer;
+}
+ .icons-image .prodc .txt .icons .fa-shopping-cart
 {
     padding: 10px;
     background-color: var(--btn-color);
@@ -1006,6 +1049,15 @@ main .container .content .grid-details .grid-left .txt p a
     margin: 0 5%;
     padding: 10px 0;
     border-top: 1px solid var(--bac-search);
+}
+.chickout .pro .delete i
+{
+    padding: 5px 10px;
+}
+.chickout .pro .delete:hover
+{
+    background-color: var(--btn-color);
+    color: var(--nav-color);
 }
 .chickout .pro .delete:hover,
 main .container .content .grid-details .grid-left >div:first-child >div:nth-child(2) button:hover,
@@ -1222,7 +1274,7 @@ main .container .content .grid-details .grid-left > div:last-child button:hover
         color: white;
      }
      span.active {
-        width: 323%;
+        width: 450%;
     }
     .btnSteps
     {

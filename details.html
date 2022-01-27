@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
      <!-- main css files  -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- change language  -->
+    <link rel="stylesheet" href="css/arblan.css">
     <!-- media  -->
     <link rel="stylesheet" href="css/media.css">
 </head>
@@ -73,10 +75,10 @@
                                 <span>المملكة العربية السعودية/ ر.س</span>
                                 </a>
                              </li>
-                             <li><a href="">
+                             <li id="lang">
                                 <span>English</span>
                                 <span><i class="fas fa-language"></i></span>                           
-                                </a>
+                                
                              </li>
                         </ul>
                     </nav>
@@ -95,7 +97,7 @@
                         <img src="images/logo.svg" alt="logo" srcset="">
                     </div>
                     <div class="search">
-                        <input type="text" placeholder="البحث">
+                        <input type="text" placeholder="البحث" id="input-search">
                         <i class="fas fa-search"></i>
                         <div class="search-link">
                             <ul>
@@ -111,7 +113,7 @@
                     </div>
                     <div class="basket" id="shoping-cart">
                         <a href="ckickout.html"> <i class="fas fa-shopping-cart"></i></a>
-                       
+                        <span id="counter">0</span>
                     </div>
                 </div>
                 <div class="row list">
@@ -543,5 +545,6 @@
     </footer>
     <!-- end footer  -->
     <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>

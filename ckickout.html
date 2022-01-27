@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
      <!-- main css files  -->
     <link rel="stylesheet" href="css/style.css">
+        <!-- change language  -->
+        <link rel="stylesheet" href="css/arblan.css">
     <!-- media  -->
     <link rel="stylesheet" href="css/media.css">
 </head>
@@ -72,10 +74,10 @@
                                 <span>المملكة العربية السعودية/ ر.س</span>
                                 </a>
                              </li>
-                             <li><a href="">
+                             <li id="lang">
                                 <span>English</span>
                                 <span><i class="fas fa-language"></i></span>                           
-                                </a>
+                                
                              </li>
                         </ul>
                     </nav>
@@ -93,7 +95,7 @@
                         <img src="images/logo.svg" alt="logo" srcset="">
                     </div>
                     <div class="search">
-                        <input type="text" placeholder="البحث">
+                        <input type="text" placeholder="البحث" id="input-search">
                         <i class="fas fa-search"></i>
                         <div class="search-link">
                             <ul>
@@ -109,7 +111,7 @@
                     </div>
                     <div class="basket" id="shoping-cart">
                         <a href="ckickout.html"> <i class="fas fa-shopping-cart"></i></a>
-                       
+                        <span id="counter">0</span>
                     </div>
                 </div>
                 <div class="row list">
@@ -184,8 +186,7 @@
                                 </div>
                             </div>
                             <div class="delete">
-                               <i class="fas fa-shopping-cart"></i>
-                                حذف
+                                <i class="fas fa-trash-alt"></i>                                حذف
                             </div>
                         </div>
                         <div class="pro">
@@ -226,8 +227,7 @@
                                 </div>
                             </div>
                             <div class="delete">
-                               <i class="fas fa-shopping-cart"></i>
-                                حذف
+                                <i class="fas fa-trash-alt"></i>                                حذف
                             </div>
                         </div>
                         <div class="pro">
@@ -268,8 +268,7 @@
                                 </div>
                             </div>
                             <div class="delete">
-                               <i class="fas fa-shopping-cart"></i>
-                                حذف
+                                <i class="fas fa-trash-alt"></i>                                حذف
                             </div>
                         </div>
                     </div>
@@ -330,9 +329,7 @@
                             <div class="circle">2
                                 <span></span>
                             </div>
-                            <div class="circle">3
-                                <!-- <span></span> -->
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="inp-ifo">
@@ -354,49 +351,34 @@
                                 
                             </div>
                             <div class="page">
-                                <h1>  بيانات الحساب</h1>
+                                <h1>  بيانات الدفع</h1>
                                 
                                     <div>
-                                        <label for=""> الاسم </label>
+                                        <label for=""> رقم كرت الدفع </label>
                                         <input type="text" placeholder="ادخل الاسم الكامل">
                                         <span id="name"></span>
                                     </div>
                                     <div>
-                                        <label for="">رقم الجوال</label>
-                                        <input type="tel" placeholder="ادخل رقم الجوال الخاص بك">
-                                        <span id="phone"></span>
+                                        <label for="">سوف يتم سحب المبلغ من رصيدك </label>
                                     </div>
                                    
                          
                             </div>
                             <div class="page">
-                                <h1>  البانات المالية</h1>
+                                <h1>تأكيد الدفع</h1>
                               
                                     <div>
-                                        <label for=""> الاسم </label>
+                                        <label for=""> ادخل رقم التأكيد </label>
                                         <input type="text" placeholder="ادخل الاسم الكامل">
                                         <span id="name"></span>
                                     </div>
-                                    <div>
-                                        <label for="">رقم الجوال</label>
-                                        <input type="tel" placeholder="ادخل رقم الجوال الخاص بك">
-                                        <span id="phone"></span>
-                                    </div>
-                                  
-                               
                             </div>
                             <div class="page">
-                                <h1>  البانات المالية</h1>
+                                <h1>شكرا على اختيار موقعنا</h1>
                               
+                                     
                                     <div>
-                                        <label for=""> الاسم </label>
-                                        <input type="text" placeholder="ادخل الاسم الكامل">
-                                        <span id="name"></span>
-                                    </div>
-                                    <div>
-                                        <label for="">رقم الجوال</label>
-                                        <input type="tel" placeholder="ادخل رقم الجوال الخاص بك">
-                                        <span id="phone"></span>
+                                        
                                     </div>
                                   
                                
@@ -630,5 +612,6 @@
     </footer>
     <!-- end footer  -->
     <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>

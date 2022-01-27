@@ -85,7 +85,7 @@ function showleft(){
 
 //timer for acount
 const timer = ()=>{
-    const upperDate = new Date('Jan 29, 2022 00:00:00').getTime();
+    const upperDate = new Date('Jan 29, 2023 00:00:00').getTime();
     const currentDate = new Date().getTime();
     const diffDate = upperDate-currentDate;
 
@@ -148,11 +148,12 @@ let coMR = Number(mr);
 let page =document.getElementsByClassName("page");
 next.addEventListener("click",(e)=>{
     e.preventDefault();   
-    if(i==3)
+    if(i==2)
     {
         circle[i].classList.add("active");
-        page[3].classList.add("hidden-element");
-    }
+        page[2].classList.add("hidden-element");
+        next.style.display ="none";
+     }
     else
     {
             span[i].classList.add("active");
@@ -161,16 +162,17 @@ next.addEventListener("click",(e)=>{
             i+=1;      
     }
     console.log(i);
-
 });
 
 pre.addEventListener("click",(e)=>{
     e.preventDefault();   
-    if(i==3)
+    if(i==2)
     {
         span[i-1].classList.remove("active");
         circle[i].classList.remove("active"); 
-        page[i].classList.remove("hidden-element");
+        page[i-1].classList.remove("hidden-element");
+        next.style.display ="block";
+        pre.style.display =" block";
         i-=1;    
     }
     else
@@ -186,4 +188,18 @@ pre.addEventListener("click",(e)=>{
     })
 
  
-
+// change language
+// const chlang =document.querySelector("#lang");
+// chlang.addEventListener("click",(e)=>{
+//     e.preventDefault();
+//     let lang = document.getElementsByTagName("link")[4];
+//     if(lang.getAttribute('href')=='css/style.css')
+//     {
+//         lang.setAttribute("href","css/langen.css");
+//         console.log("murad");
+//     }
+//     else if(lang.getAttribute("href")=="css/langen.css")
+//     {
+//         lang.setAttribute("href","css/style.css")
+//     }
+// })
