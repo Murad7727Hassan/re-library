@@ -25,6 +25,7 @@ openPopWind.addEventListener('click',(e)=>
     jsHidden.classList.add('hidden-element');
      showright();
 }) 
+
 // closse window pop for login
 closeWind.addEventListener('click',()=>
 {
@@ -33,17 +34,8 @@ closeWind.addEventListener('click',()=>
     jsHidden.classList.remove('hidden-element');
     mainHeight.style.height = "auto";
 }) 
-//show shoping carts
-// closeWind.addEventListener('click',()=>
-// {
-//     login.style.display ="none";
-//     jsHiddin.style.display="block";
-//     window.location.reload(true);
-//     location.reload();
-//     mainHeight.style.height = "auto";
-// }) 
 
-// show window login 
+ // show window login 
 function showright(){
     winleft.style.visibility = "hidden";
     winright.style.visibility = "visible";
@@ -81,8 +73,6 @@ function showleft(){
   
 }
  
-
-
 //timer for acount
 const timer = ()=>{
     const upperDate = new Date('Jan 29, 2023 00:00:00').getTime();
@@ -114,13 +104,12 @@ setInterval(timer, 1000);
 
 //open pop window for update cart
 let p=document.querySelector(".progress");
-let span=document.querySelectorAll(".circle span");//33 0-2 []
-let circle=document.querySelectorAll(".circle");//3 0-2 []
+let span=document.querySelectorAll(".circle span"); 
+let circle=document.querySelectorAll(".circle"); 
 
 let pre=document.querySelector(".prev");
 let next=document.querySelector(".next");
-// let page= document.querySelector(".slide-page");
-
+ 
 
 const closeCART = document.getElementById("close");
 const winPOP = document.querySelector(".win-pop-cart");
@@ -133,18 +122,8 @@ closeCART.addEventListener('click',(e)=>{
     e.preventDefault();
     winPOP.style.display ="none";
 })
-// closeCART.addEventListener('click',(e)=>
-// {
-//     winPOP.classList.add("hidden-element");
-// }) 
-
-
-
-
-
+ 
 let i=0;
-let mr="-25%";
-let coMR = Number(mr);
 let page =document.getElementsByClassName("page");
 next.addEventListener("click",(e)=>{
     e.preventDefault();   

@@ -1,4 +1,4 @@
-// search 
+// search on book
 const search =document.getElementById("input-search");
 let bookNAME = document.querySelectorAll(".name-book");
 let prodc = document.querySelectorAll(".prodc");
@@ -19,7 +19,8 @@ search.addEventListener("keyup",(e)=>{
 
     }
 })
-//basket counter
+
+//add book for shoping cart
 const btnCART = document.querySelectorAll(".btn-cart");
 const counterCART = document.getElementById("counter");
 var conuter =0;
@@ -33,7 +34,7 @@ btnCART.forEach(cart=>{
 })
 
 
-// change language
+// change language form  Arbic to English and revers
 const chlang =document.querySelector("#lang");
 chlang.addEventListener("click",(e)=>{
     e.preventDefault();
@@ -48,15 +49,4 @@ chlang.addEventListener("click",(e)=>{
         lang.setAttribute("href","css/arblan.css")
     }
 })
-// let lang = document.getElementsByTagName("link")[4];
-// function chlang()
-// {
-//     if(lang.getAttribute("href")=="css/style.css")
-//     {
-//         lang.getAttribute("href","css/langen.css")
-//     }
-//     else if(lang.getAttribute("href")=="css/langen.css")
-//     {
-//         lang.getAttribute("href","css/style.css")
-//     }
-// }
+ 
